@@ -2,7 +2,10 @@ version: "3"
 
 services:
   jupyter-pytorch:
-    image: nvcr.io/nvidia/pytorch:22.08-py3 
+    image: jupyter-pytorch
+    build:
+      context: ./
+      dockerfile: jupyter-pytorch.Dockerfile
     ipc: host
     ulimits:
       stack: 67108864
